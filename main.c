@@ -4,46 +4,26 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int x, y;
-	char op;
-	int result;
+	int i, trial = 0;
+	int ans = 59;
 	
-	printf("enter the calculation:");
-	scanf("%d %c %d", &x, &op, &y);
-	
-	//연산자에 따라 결과값을 저장
-	if (op=='+')
-		result = x+y; 
-	else if (op=='-')
-		result = x-y;
-	else if (op=='*')
-		result = x*y;
-	else
-		result = x/y;
+	do 
+	{
+		printf("Guess a number:");
+		scanf("%i", &i);
 		
+		if (i>ans)
+			printf("High!\n");
+		else if(i<ans)
+			printf("Low!\n");
+		trial++;
+	}
+	while (i != ans);
 		
-	printf("=%i\n", result);
 	
+	printf("Congratulations! trials : %i", trial );
+		
 	return 0;
 	
 }
-/*	int a,b;
-	char x;
-	
-	scanf("%i %c %i", &a, &x, &b);
-	
-	if(x=='+')
-		printf("%i + %i = %i", a, b, a+b);
-	
-	else if(x=='-')
-		printf("%i - %i = %i", a, b, a-b);	
-	
-	else if(x=='*')
-		printf("%i * %i = %i", a, b, a*b);	
-		
-	else
-		printf("%i / %i = %i", a, b, a/b);
-	 
-	return 0;
-	*/
 
